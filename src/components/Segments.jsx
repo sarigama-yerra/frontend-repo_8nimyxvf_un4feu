@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import AnimatedText from './AnimatedText';
 
 export default function Segments() {
   const card = {
@@ -20,21 +21,27 @@ export default function Segments() {
           className="grid gap-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-2"
         >
           <div>
-            <h3 className="text-2xl font-semibold">Talk your way to better credit</h3>
-            <p className="mt-2 text-slate-600">No paperwork. No English. No stress.</p>
+            <AnimatedText text="Talk your way to better credit" className="text-2xl font-semibold" />
+            <AnimatedText text="No paperwork. No English. No stress." className="mt-2 text-slate-600" stagger={0.03} />
             <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-              <li>Speak daily — Gubera records automatically</li>
-              <li>Build your business credit score</li>
-              <li>See how much credit you can qualify for</li>
-              <li>Access verified lenders safely</li>
+              {[
+                'Speak daily — Gubera records automatically',
+                'Build your business credit score',
+                'See how much credit you can qualify for',
+                'Access verified lenders safely',
+              ].map((item) => (
+                <li key={item}>
+                  <AnimatedText text={item} stagger={0.02} />
+                </li>
+              ))}
             </ul>
-            <a href="#join" className="mt-6 inline-block rounded-lg bg-emerald-500 px-5 py-3 font-medium text-white hover:bg-emerald-600">Join Early Access</a>
+            <a href="#join" className="mt-6 inline-block rounded-lg bg-emerald-600 px-5 py-3 font-medium text-white hover:bg-emerald-700">Join Early Access</a>
           </div>
           <div className="grid place-items-center">
             <div className="aspect-[4/3] w-full max-w-md rounded-xl border border-slate-200 bg-gradient-to-br from-emerald-100 via-emerald-50 to-white p-6">
               <div className="flex h-full items-center justify-center text-center text-slate-600">
                 <div>
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-emerald-500/20" />
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-emerald-600/20" />
                   <p>App mock: mic icon + score bar</p>
                 </div>
               </div>
@@ -52,13 +59,19 @@ export default function Segments() {
           className="grid gap-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-2"
         >
           <div>
-            <h3 className="text-2xl font-semibold">Verified voice data for real underwriting</h3>
-            <p className="mt-2 text-slate-600">Discover creditworthy MSMEs verified by voice and behavior.</p>
+            <AnimatedText text="Verified voice data for real underwriting" className="text-2xl font-semibold" />
+            <AnimatedText text="Discover creditworthy MSMEs verified by voice and behavior." className="mt-2 text-slate-600" stagger={0.03} />
             <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-              <li>Pre-scored MSMEs with consent-based data</li>
-              <li>Fraud detection and supplier verification</li>
-              <li>OCEN-ready APIs</li>
-              <li>Custom dashboards for loan officers</li>
+              {[
+                'Pre-scored MSMEs with consent-based data',
+                'Fraud detection and supplier verification',
+                'OCEN-ready APIs',
+                'Custom dashboards for loan officers',
+              ].map((item) => (
+                <li key={item}>
+                  <AnimatedText text={item} stagger={0.02} />
+                </li>
+              ))}
             </ul>
             <a href="#contact" className="mt-6 inline-block rounded-lg border border-slate-200 bg-white px-5 py-3 font-medium text-slate-900 hover:bg-slate-50">Partner with Gubera</a>
           </div>
